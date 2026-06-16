@@ -655,7 +655,7 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--white);
+    background-color: rgba(101, 51, 136, 0.1);
     border-top: 1px solid var(--border-color);
     box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.05);
     z-index: 10;
@@ -1865,6 +1865,16 @@ button {
     justify-content: center;
     flex-shrink: 0;
     width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer-logo .logo-icon {
+    background-color: #653388;
+    padding: 6px 12px;
+    border-radius: var(--border-radius-sm);
+    display: block;
+    width: auto;
     height: 42px;
     object-fit: contain;
 }
