@@ -189,12 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 150);
             }
 
-            // Update active category badge
-            const activeBadge = document.getElementById("active-category-badge");
-            if (activeBadge) {
-                activeBadge.innerHTML = btn.innerHTML;
-            }
-
             // Update list title and count
             const listTitle = document.getElementById("list-dynamic-title");
             const listCount = document.getElementById("list-dynamic-count");
@@ -342,32 +336,19 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isValid) {
                 showSuccessMessage();
                 leadForm.reset();
+                
+                // Trigger Brochure PDF Download
+                const link = document.createElement("a");
+                link.href = "assets/logo.png"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
+                link.download = "ATH_Meadows_Brochure.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             }
         });
     }
 
-    if (heroLeadForm) {
-        heroLeadForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            
-            const nameField = document.getElementById("strip-name");
-            const emailField = document.getElementById("strip-email");
-            const phoneField = document.getElementById("strip-phone");
-            
-            let isValid = true;
 
-            const phoneRegex = /^[6-9]\d{9}$/;
-            if (!phoneRegex.test(phoneField.value.trim()) || nameField.value.trim().length < 3) {
-                alert("Please fill in valid name and 10-digit mobile number details.");
-                isValid = false;
-            }
-
-            if (isValid) {
-                showSuccessMessage();
-                heroLeadForm.reset();
-            }
-        });
-    }
 
     if (closeSuccessBtn) {
         closeSuccessBtn.addEventListener("click", () => {
@@ -438,5 +419,90 @@ document.addEventListener("DOMContentLoaded", () => {
                 behavior: "smooth"
             });
         });
+    }
+
+    /* ==========================================
+       11. ENQUIRY POPUP MODAL (FORM FLOW)
+       ========================================== */
+    const enquiryModal = document.getElementById("enquiry-modal");
+    const heroEnquireBtn = document.getElementById("hero-enquire-btn");
+    const enquiryModalCloseBtn = document.getElementById("enquiry-modal-close-btn");
+    const enquiryFormContainer = document.getElementById("enquiry-form-container");
+    const enquiryStep3 = document.getElementById("enquiry-step-3");
+    const popupLeadForm = document.getElementById("popup-lead-form");
+    const enquirySuccessCloseBtn = document.getElementById("enquiry-success-close-btn");
+
+    if (enquiryModal && heroEnquireBtn) {
+        // Open Modal
+        heroEnquireBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (enquiryFormContainer) enquiryFormContainer.style.display = "block";
+            if (enquiryStep3) enquiryStep3.style.display = "none";
+            if (popupLeadForm) popupLeadForm.reset();
+            
+            enquiryModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+
+        const closeEnquiryModal = () => {
+            enquiryModal.classList.remove("active");
+            document.body.style.overflow = "auto";
+        };
+
+        // Close Modal Actions
+        if (enquiryModalCloseBtn) {
+            enquiryModalCloseBtn.addEventListener("click", closeEnquiryModal);
+        }
+        enquiryModal.addEventListener("click", (e) => {
+            if (e.target === enquiryModal) closeEnquiryModal();
+        });
+        if (enquirySuccessCloseBtn) {
+            enquirySuccessCloseBtn.addEventListener("click", closeEnquiryModal);
+        }
+
+        // Form Submission
+        if (popupLeadForm) {
+            popupLeadForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                
+                const nameField = document.getElementById("popup-name");
+                const mobileField = document.getElementById("popup-mobile");
+                const emailField = document.getElementById("popup-email");
+                let isValid = true;
+
+                document.querySelectorAll("#popup-lead-form .form-group").forEach(grp => grp.classList.remove("invalid"));
+
+                if (nameField.value.trim().length < 3) {
+                    nameField.parentElement.classList.add("invalid");
+                    isValid = false;
+                }
+
+                const phoneRegex = /^[6-9]\d{9}$/;
+                if (!phoneRegex.test(mobileField.value.trim())) {
+                    mobileField.parentElement.classList.add("invalid");
+                    isValid = false;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailField.value.trim())) {
+                    emailField.parentElement.classList.add("invalid");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Transition to Success Step
+                    if (enquiryFormContainer) enquiryFormContainer.style.display = "none";
+                    if (enquiryStep3) enquiryStep3.style.display = "block";
+                    
+                    // Trigger Download
+                    const link = document.createElement("a");
+                    link.href = "assets/logo.png"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
+                    link.download = "ATH_Meadows_Brochure.pdf";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            });
+        }
     }
 });

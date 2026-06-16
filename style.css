@@ -90,17 +90,17 @@ button {
 }
 
 .section-padding {
-    padding: 70px 0;
+    padding: 50px 0;
 }
 
 @media (max-width: 768px) {
     .section-padding {
-        padding: 45px 0;
+        padding: 30px 0;
     }
 }
 
 .section-header {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .section-title {
@@ -376,12 +376,12 @@ button {
 
 .hero-content-wrapper {
     width: 100%;
-    padding-top: 110px;
-    padding-bottom: 120px;
+    padding-top: 130px;
+    padding-bottom: 100px;
 }
 
 .hero-left-text {
-    max-width: 720px;
+    max-width: 620px;
     text-align: left;
     user-select: text;
     -webkit-user-select: text;
@@ -431,8 +431,8 @@ button {
         padding: 40px 0;
     }
     .hero-content-wrapper {
-        padding-top: 80px;
-        padding-bottom: 40px;
+        padding-top: 100px;
+        padding-bottom: 30px;
     }
     .hero-left-text {
         max-width: 100%;
@@ -448,6 +448,13 @@ button {
         font-size: 1rem;
         max-width: 100%;
     }
+    .hero-enquire-wrapper {
+        margin-top: 10px;
+    }
+}
+
+.hero-enquire-wrapper {
+    margin-top: 14px;
 }
 
 /* Circular Badge Design from Screenshot 1 */
@@ -669,9 +676,8 @@ button {
 }
 
 .strip-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 16px;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -681,36 +687,15 @@ button {
         padding: 24px 0;
     }
     .strip-form {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        justify-content: center;
     }
 }
 
-.strip-form-group {
-    width: 100%;
-}
-
-.strip-input {
-    width: 100%;
-    padding: 12px 18px;
-    border: 1px solid rgba(101, 51, 136, 0.25);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.92rem;
-    color: var(--dark-text);
-    outline: none;
-    transition: var(--transition-fast);
-    background-color: var(--white);
-}
-
-.strip-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(101, 51, 136, 0.1);
-}
-
 .strip-submit-btn {
+    display: inline-block;
+    text-align: center;
     padding: 12px 32px;
-    background-color: #653388; /* Bold Blue Button from Screenshot 1 */
+    background-color: #653388;
     color: var(--white);
     font-family: var(--font-heading);
     font-size: 0.95rem;
@@ -718,6 +703,7 @@ button {
     border-radius: 8px;
     transition: var(--transition-smooth);
     box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+    text-decoration: none;
 }
 
 .strip-submit-btn:hover {
@@ -977,12 +963,12 @@ button {
 /* --- AMENITIES SECTION (Premium Card Grid from Screenshot) --- */
 .amenities-section-premium {
     background-color: var(--light-purple);
-    padding: 35px 0;
+    padding: 30px 0;
 }
 
 @media (max-width: 768px) {
     .amenities-section-premium {
-        padding: 25px 0;
+        padding: 20px 0;
     }
 }
 
@@ -1736,6 +1722,17 @@ button {
     display: block;
 }
 
+#submit-btn {
+    transition: var(--transition-smooth);
+}
+
+#submit-btn:hover {
+    background-color: var(--white) !important;
+    color: var(--primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
 /* Success Card overlay inside form box */
 .form-success-overlay {
     position: absolute;
@@ -1878,21 +1875,15 @@ button {
 
 .footer-logo .logo-icon {
     background-color: #653388;
-    padding: 6px 12px;
-    border-radius: var(--border-radius-sm);
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
     display: block;
     width: auto;
-    height: 42px;
+    height: 64px;
     object-fit: contain;
 }
 
-.footer-logo h4 {
-    font-family: var(--font-accent);
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--primary);
-}
+
 
 .project-tag-footer {
     font-size: 0.7rem;
@@ -1906,6 +1897,7 @@ button {
 .footer-desc {
     line-height: 1.6;
     color: var(--gray-text);
+    text-align: justify;
 }
 
 .rera-badge-footer {
@@ -2555,3 +2547,5 @@ button {
         height: 16px;
     }
 }
+
+
