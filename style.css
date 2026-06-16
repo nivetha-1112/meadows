@@ -131,14 +131,6 @@ button {
     text-align: center;
 }
 
-.section-desc {
-    font-size: 0.95rem;
-    color: var(--gray-text);
-    line-height: 1.65;
-    max-width: 600px;
-    margin: 18px auto 0;
-}
-
 /* --- BUTTONS --- */
 .btn {
     display: inline-flex;
