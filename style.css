@@ -977,6 +977,13 @@ button {
 /* --- AMENITIES SECTION (Premium Card Grid from Screenshot) --- */
 .amenities-section-premium {
     background-color: var(--light-purple);
+    padding: 35px 0;
+}
+
+@media (max-width: 768px) {
+    .amenities-section-premium {
+        padding: 25px 0;
+    }
 }
 
 .amenities-grid-premium {
