@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================== */
     const navbar = document.getElementById("navbar");
     const navLinksList = document.querySelectorAll(".nav-link");
-    
+
     window.addEventListener("scroll", () => {
         if (navbar) {
             if (window.scrollY > 50) {
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 navbar.classList.remove("scrolled");
             }
         }
-        
+
         // Active link highlighting on scroll
         let currentSection = "";
         const sections = document.querySelectorAll("section");
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 120;
             const sectionHeight = section.offsetHeight;
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentSection = section.getAttribute("id");
             }
         });
-        
+
         navLinksList.forEach(link => {
             link.classList.remove("active");
             if (link.getAttribute("href") === `#${currentSection}`) {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================== */
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
-    
+
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", () => {
             menuToggle.classList.toggle("active");
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hlPrevBtn = document.getElementById("highlights-prev");
     const hlNextBtn = document.getElementById("highlights-next");
     const hlDotsContainer = document.getElementById("highlights-dots");
-    
+
     let hlCurrentIndex = 0;
     const hlCards = document.querySelectorAll(".highlight-premium-card");
     const hlTotalCards = hlCards.length;
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateHlSlider = () => {
         const cardsPerView = getHlCardsPerView();
         const maxIndex = Math.max(0, hlTotalCards - cardsPerView);
-        
+
         if (hlCurrentIndex > maxIndex) {
             hlCurrentIndex = maxIndex;
         }
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardWidth = hlCards[0].offsetWidth;
             const gap = 30; // Matches CSS gap
             const moveDistance = hlCurrentIndex * (cardWidth + gap);
-            
+
             if (hlTrack) {
                 hlTrack.style.transform = `translateX(-${moveDistance}px)`;
             }
@@ -220,12 +220,12 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
             planToggleButtons.forEach(btn => btn.classList.remove("active"));
             button.classList.add("active");
-            
+
             const selectedType = button.getAttribute("data-type");
 
             floorPlanCards.forEach(card => {
                 const cardType = card.getAttribute("data-plan-type");
-                
+
                 if (selectedType === cardType) {
                     card.classList.remove("hide");
                     setTimeout(() => {
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", () => {
                 const imgSrc = btn.getAttribute("data-img");
                 const imgTitle = btn.getAttribute("data-title");
-                
+
                 modalImg.src = imgSrc;
                 modalPlanTitle.innerText = imgTitle;
                 floorplanModal.classList.add("active");
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (leadForm) {
         leadForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            
+
             const nameField = document.getElementById("name");
             const mobileField = document.getElementById("mobile");
             const emailField = document.getElementById("email");
@@ -336,10 +336,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isValid) {
                 showSuccessMessage();
                 leadForm.reset();
-                
+
                 // Trigger Brochure PDF Download
                 const link = document.createElement("a");
-                link.href = "assets/logo.png"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
+                link.href = "assets/Meadows Brochure.pdf"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
                 link.download = "ATH_Meadows_Brochure.pdf";
                 document.body.appendChild(link);
                 link.click();
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 iframe.frameBorder = "0";
                 iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
                 iframe.allowFullscreen = true;
-                
+
                 // Replace placeholder contents with the iframe
                 videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
             }
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
        10. BACK TO TOP BUTTON
        ========================================== */
     const backToTopBtn = document.getElementById("back-to-top-btn");
-    
+
     if (backToTopBtn) {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 300) {
@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 backToTopBtn.classList.remove("show");
             }
         });
-        
+
         backToTopBtn.addEventListener("click", () => {
             window.scrollTo({
                 top: 0,
@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (enquiryFormContainer) enquiryFormContainer.style.display = "block";
             if (enquiryStep3) enquiryStep3.style.display = "none";
             if (popupLeadForm) popupLeadForm.reset();
-            
+
             enquiryModal.classList.add("active");
             document.body.style.overflow = "hidden";
         });
@@ -464,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (popupLeadForm) {
             popupLeadForm.addEventListener("submit", (e) => {
                 e.preventDefault();
-                
+
                 const nameField = document.getElementById("popup-name");
                 const mobileField = document.getElementById("popup-mobile");
                 const emailField = document.getElementById("popup-email");
@@ -493,10 +493,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Transition to Success Step
                     if (enquiryFormContainer) enquiryFormContainer.style.display = "none";
                     if (enquiryStep3) enquiryStep3.style.display = "block";
-                    
+
                     // Trigger Download
                     const link = document.createElement("a");
-                    link.href = "assets/logo.png"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
+                    link.href = "assets/Meadows Brochure.pdf"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
                     link.download = "ATH_Meadows_Brochure.pdf";
                     document.body.appendChild(link);
                     link.click();
