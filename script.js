@@ -391,4 +391,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.12 });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    /* ==========================================
+       9. DYNAMIC YOUTUBE EMBED ON CLICK
+       ========================================== */
+    const videoPlaceholder = document.getElementById("video-placeholder");
+    if (videoPlaceholder) {
+        videoPlaceholder.addEventListener("click", () => {
+            const videoId = videoPlaceholder.getAttribute("data-video-id");
+            if (window.location.protocol === "file:") {
+                // Bypass local file:// origin restrictions by opening in a new tab
+                window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
+            } else {
+                // Load inline autoplay iframe on http/https web servers
+                const iframe = document.createElement("iframe");
+                iframe.className = "map-video-iframe";
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                iframe.title = "ATH Meadows Apartment Walkthrough";
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.allowFullscreen = true;
+                
+                // Replace placeholder contents with the iframe
+                videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
+            }
+        });
+    }
 });
