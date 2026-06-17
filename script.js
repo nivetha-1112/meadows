@@ -376,10 +376,10 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==========================================
        9. DYNAMIC YOUTUBE EMBED ON CLICK
        ========================================== */
-    const videoPlaceholder = document.getElementById("video-placeholder");
-    if (videoPlaceholder) {
-        videoPlaceholder.addEventListener("click", () => {
-            const videoId = videoPlaceholder.getAttribute("data-video-id");
+    const videoPlaceholders = document.querySelectorAll(".video-placeholder");
+    videoPlaceholders.forEach(placeholder => {
+        placeholder.addEventListener("click", () => {
+            const videoId = placeholder.getAttribute("data-video-id");
             if (window.location.protocol === "file:") {
                 // Bypass local file:// origin restrictions by opening in a new tab
                 window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
@@ -394,10 +394,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 iframe.allowFullscreen = true;
 
                 // Replace placeholder contents with the iframe
-                videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
+                placeholder.parentNode.replaceChild(iframe, placeholder);
             }
         });
-    }
+    });
 
     /* ==========================================
        10. BACK TO TOP BUTTON
