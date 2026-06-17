@@ -2125,7 +2125,7 @@ button {
     margin-top: 20px;
 }
 
-.footer-links .footer-social-links a {
+.footer-social-links a {
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -2135,17 +2135,22 @@ button {
     align-items: center;
     justify-content: center;
     transition: var(--transition-smooth);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary);
     margin-bottom: 0;
     padding-left: 0;
 }
 
-.footer-links .footer-social-links a:hover {
+.footer-social-links a:hover {
     background-color: var(--primary) !important;
     color: var(--white) !important;
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
     padding-left: 0 !important;
+}
+
+.footer-social-links a i {
+    font-size: 18px;
+    line-height: 1;
 }
 
 .footer-links h4,
@@ -2167,7 +2172,7 @@ button {
 }
 
 .footer-links a {
-    color: var(--gray-text);
+    color: black;
     transition: var(--transition-fast);
 }
 
@@ -2183,7 +2188,7 @@ button {
 }
 
 .footer-contact-details strong {
-    color: var(--dark-text);
+    color: var(--primary);
 }
 
 .footer-contact-details a {
