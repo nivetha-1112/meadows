@@ -145,6 +145,53 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        // Touch Swipe support for Mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartTime = 0;
+        const swipeThreshold = 50; // minimum distance in px
+        const swipeMaxTime = 500;  // maximum time in ms
+
+        hlTrack.addEventListener("touchstart", (e) => {
+            const touch = e.changedTouches[0];
+            touchStartX = touch.pageX;
+            touchStartY = touch.pageY;
+            touchStartTime = Date.now();
+        }, { passive: true });
+
+        hlTrack.addEventListener("touchend", (e) => {
+            const touch = e.changedTouches[0];
+            const touchEndX = touch.pageX;
+            const touchEndY = touch.pageY;
+            const touchElapsedTime = Date.now() - touchStartTime;
+
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+
+            // Check if swipe is horizontal and within time/distance thresholds
+            if (touchElapsedTime <= swipeMaxTime && Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) >= swipeThreshold) {
+                const cardsPerView = getHlCardsPerView();
+                const maxIndex = Math.max(0, hlTotalCards - cardsPerView);
+
+                if (diffX < 0) {
+                    // Swiped Left -> Go Next
+                    if (hlCurrentIndex < maxIndex) {
+                        hlCurrentIndex++;
+                    } else {
+                        hlCurrentIndex = 0; // Loop back
+                    }
+                } else {
+                    // Swiped Right -> Go Prev
+                    if (hlCurrentIndex > 0) {
+                        hlCurrentIndex--;
+                    } else {
+                        hlCurrentIndex = maxIndex; // Loop to end
+                    }
+                }
+                updateHlSlider();
+            }
+        }, { passive: true });
+
         window.addEventListener("resize", updateHlSlider);
         // Run once initial size is known
         setTimeout(updateHlSlider, 100);

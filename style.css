@@ -51,6 +51,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -60,6 +61,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    max-width: 100vw;
 }
 
 img {
@@ -87,6 +89,15 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* Global section overflow guard - prevents any section from causing horizontal scroll */
+section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .section-padding {
@@ -803,7 +814,7 @@ button {
     color: #606060;
     margin-top: 20px;
     line-height: 1.7;
-    text-align: left;
+    text-align: justify;
 }
 
 /* Decorative Framing splash for child playing visual */
@@ -814,6 +825,7 @@ button {
     align-items: center;
     width: 100%;
     padding: 0 15px 15px 0;
+    overflow: hidden;
 }
 
 .splash-bg {
@@ -870,11 +882,13 @@ button {
     position: relative;
     padding: 0 40px;
     margin-top: 50px;
+    overflow: hidden;
 }
 
 .highlights-slider-viewport {
     overflow: hidden;
     width: 100%;
+    max-width: 100%;
 }
 
 .highlights-carousel-track {
@@ -994,14 +1008,36 @@ button {
 
 @media (max-width: 576px) {
     .highlight-premium-card {
-        flex: 0 0 100%;
+        flex: 0 0 calc(100% - 0px);
+        min-width: 0;
         /* 1 card visible on mobile */
+    }
+    .highlights-carousel-track {
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .card-image-wrapper {
         height: 180px;
+    }
+    .slider-nav-btn {
+        display: none !important;
+    }
+    .highlights-slider-container {
+        padding: 0;
+        overflow: hidden;
+    }
+    .highlights-slider-viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+    .overview-splash-wrapper {
+        padding: 0;
+        overflow: hidden;
+    }
+    .splash-bg {
+        right: 0;
     }
 }
 
@@ -2092,7 +2128,7 @@ button {
 .footer-desc {
     line-height: 1.6;
     color: var(--gray-text);
-    text-align: left;
+    text-align: justify;
 }
 
 .rera-badge-footer {
