@@ -803,7 +803,7 @@ button {
     color: #606060;
     margin-top: 20px;
     line-height: 1.7;
-    text-align: justify;
+    text-align: left;
 }
 
 /* Decorative Framing splash for child playing visual */
@@ -1188,6 +1188,7 @@ button {
     line-height: 1.65;
     margin: 0;
     max-width: 100%;
+    text-align: center;
 }
 
 /* Dynamic Pill Tabs Row */
@@ -1483,6 +1484,16 @@ button {
 }
 
 /* --- NEW PREMIUM FLOOR PLANS LAYOUT --- */
+.floor-plans-section {
+    padding: 30px 0;
+}
+
+@media (max-width: 768px) {
+    .floor-plans-section {
+        padding: 20px 0;
+    }
+}
+
 .floor-plan-main-card {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -1491,7 +1502,7 @@ button {
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 @media (max-width: 991px) {
@@ -1504,10 +1515,10 @@ button {
 .floor-plan-sidebar {
     background-color: var(--white);
     border-right: 1px solid var(--border-color);
-    padding: 30px 20px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 @media (max-width: 991px) {
@@ -1569,10 +1580,10 @@ button {
 
 /* Right Content Column Styling */
 .floor-plan-content {
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     background-color: #fafbfc;
 }
 
@@ -1583,65 +1594,24 @@ button {
     }
 }
 
-.floor-content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: 20px;
-}
-
-.floor-header-text {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.floor-title-main {
-    font-family: var(--font-accent);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--gray-text);
-}
-
-.floor-subtitle-active {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #e67e22; /* Warm orange accent from the screenshot */
-    line-height: 1.3;
-}
-
-.floor-compass-wrapper {
-    flex-shrink: 0;
-}
-
-@media (max-width: 576px) {
-    .floor-compass-wrapper {
-        display: none;
-    }
-}
-
-
 /* Image Frame */
 .floor-plan-image-frame {
     position: relative;
     background-color: var(--white);
     border-radius: var(--border-radius-md);
     border: 1px solid var(--border-color);
-    padding: 30px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 420px;
+    height: 400px;
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 @media (max-width: 768px) {
     .floor-plan-image-frame {
-        height: 300px;
-        padding: 15px;
+        height: 280px;
+        padding: 10px;
     }
 }
 
@@ -1652,54 +1622,25 @@ button {
     transition: opacity 0.3s ease;
 }
 
-.floor-plan-zoom-overlay {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-}
-
-/* Footer details and CTA */
-.floor-content-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding-top: 25px;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-@media (max-width: 768px) {
-    .floor-content-footer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
-
-.floor-plan-meta-details {
-    display: flex;
-    align-items: center;
-}
-
-.floor-meta-text {
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
+/* Sidebar CTA button positioning */
+.floor-plan-sidebar .floor-plan-show-more-btn {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
     font-weight: 700;
-    color: var(--dark-text);
 }
 
-.floor-plan-cta {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-@media (max-width: 576px) {
-    .floor-plan-cta {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+@media (max-width: 991px) {
+    .floor-plan-sidebar .floor-plan-show-more-btn {
+        margin-top: 0;
+        align-self: center;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        font-size: 0.85rem;
+        padding: 10px 20px;
     }
 }
 
@@ -1741,6 +1682,7 @@ button {
     opacity: 0.85;
     margin-bottom: 40px;
     line-height: 1.6;
+    text-align: left;
 }
 
 .info-blocks-list {
@@ -1792,16 +1734,21 @@ button {
     text-decoration: underline;
 }
 
-/* Glassmorphism Form */
+/* White Contact Form Card */
 .contact-form-panel {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: var(--white);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-lg);
     overflow: hidden;
     position: relative;
+    color: var(--primary);
+}
+
+.contact-form-panel .form-input,
+.contact-form-panel .form-textarea {
+    background: var(--light-purple);
+    border: 1px solid var(--border-color);
 }
 
 .form-container {
@@ -1955,14 +1902,15 @@ button {
 
 .error-msg {
     font-size: 0.75rem;
-    color: #ff8a80;
+    color: #dc2626;
     margin-top: 2px;
     display: none;
+    font-weight: 500;
 }
 
 .form-group.invalid .form-input {
-    border-color: #ff8a80;
-    background-color: rgba(255, 235, 235, 0.95);
+    border-color: #dc2626;
+    background-color: rgba(254, 242, 242, 0.95);
 }
 
 .form-group.invalid .error-msg {
@@ -2144,7 +2092,7 @@ button {
 .footer-desc {
     line-height: 1.6;
     color: var(--gray-text);
-    text-align: justify;
+    text-align: left;
 }
 
 .rera-badge-footer {
