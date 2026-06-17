@@ -950,6 +950,7 @@ button {
     gap: 8px;
 }
 
+.card-content h3,
 .card-content h4 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
