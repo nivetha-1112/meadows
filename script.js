@@ -493,14 +493,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Transition to Success Step
                     if (enquiryFormContainer) enquiryFormContainer.style.display = "none";
                     if (enquiryStep3) enquiryStep3.style.display = "block";
-
-                    // Trigger Download
-                    const link = document.createElement("a");
-                    link.href = "assets/Meadows Brochure.pdf"; // Fallback to logo image so download works. Replace with assets/brochure.pdf when available.
-                    link.download = "ATH_Meadows_Brochure.pdf";
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
                 }
             });
         }
