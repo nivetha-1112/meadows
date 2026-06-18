@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    ATH MEADOWS LANDING PAGE - BRAND COMPLIANT STYLING
    Primary Color: #653388 (Royal Purple)
    Secondary Color: #8A5CB0
@@ -379,7 +379,7 @@ section {
     overflow: hidden;
     background-image: url('assets/hero-banner.png');
     background-size: cover;
-    background-position: center;
+    background-position: right center;
 }
 
 .hero-container {
@@ -396,7 +396,7 @@ section {
 }
 
 .hero-left-text {
-    max-width: 620px;
+    max-width: 580px;
     text-align: left;
     user-select: text;
     -webkit-user-select: text;
@@ -404,13 +404,13 @@ section {
 
 .hero-screenshot-title {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 800;
     color: var(--white);
-    line-height: 1.15;
+    line-height: 1.2;
     letter-spacing: -1px;
     margin: 0 0 20px 0;
-    /* text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45); */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .hero-highlight {
@@ -418,18 +418,21 @@ section {
     /* Bright gold/orange from screenshot */
 }
 
+/* Responsive line-break: default hidden on larger screens */
+.mobile-only-br {
+    display: none;
+}
+
 .hero-screenshot-desc {
     font-family: var(--font-body);
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--white);
-    max-width: 600px;
+    max-width: 500px;
     margin: 0;
     padding: 18px 24px;
     background-color: rgba(31, 20, 42, 0.65);
-    /* soft translucent purple */
     border-left: 4px solid #7f0e7f;
-    /* gold-orange accent line matching highlight span */
     border-radius: 0 12px 12px 0;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -476,7 +479,7 @@ section {
 
     /* Content sits at top, clears the fixed navbar */
     .hero-content-wrapper {
-        padding-top: 140px !important;
+        padding-top: clamp(90px, 20vw, 120px) !important;
         padding-bottom: 0 !important;
         width: 100%;
     }
@@ -490,7 +493,7 @@ section {
 
     /* Title */
     .hero-screenshot-title {
-        font-size: 1.55rem !important;
+        font-size: clamp(1.25rem, 5.8vw, 1.45rem) !important;
         font-weight: 800 !important;
         letter-spacing: -0.3px;
         margin-bottom: 8px;
@@ -505,10 +508,14 @@ section {
         color: #d480f0;
     }
 
+    .mobile-only-br {
+        display: inline !important;
+    }
+
     /* Description box — dark glass card, fully rounded, compact and centered */
     .hero-screenshot-desc {
         font-family: var(--font-body) !important;
-        font-size: 0.84rem !important;
+        font-size: clamp(0.72rem, 3vw, 0.8rem) !important;
         line-height: 1.45 !important;
         color: #f0e8ff !important;
         max-width: 380px !important;
@@ -578,7 +585,7 @@ section {
 
     /* Content centered with custom top padding */
    .hero-content-wrapper {
-        padding-top: 130px !important;
+        padding-top: clamp(100px, 15vw, 140px) !important;
         padding-bottom: 0 !important;
         width: 100%;
     }
@@ -593,10 +600,10 @@ section {
 
     /* Title size for tablets */
     .hero-screenshot-title {
-        font-size: 2.2rem !important;
+        font-size: clamp(1.6rem, 4.5vw, 2.2rem) !important;
         font-weight: 800 !important;
         letter-spacing: -0.5px;
-        margin-bottom: 32px !important;
+        margin-bottom: clamp(16px, 3.5vw, 32px) !important;
         line-height: 1.25;
         text-align: center;
         color: #ffffff;
@@ -611,11 +618,11 @@ section {
     /* Description box for tablets with bottom gap */
     .hero-screenshot-desc {
         font-family: var(--font-body) !important;
-        font-size: 0.88rem !important;
+        font-size: clamp(0.8rem, 1.8vw, 0.88rem) !important;
         line-height: 1.45 !important;
         color: #f0e8ff !important;
         max-width: 550px !important;
-        margin: 0 auto 32px !important;
+        margin: 0 auto clamp(16px, 3.5vw, 32px) !important;
         padding: 10px 16px !important;
         background-color: rgba(20, 10, 35, 0.58) !important;
         border-left: none !important;

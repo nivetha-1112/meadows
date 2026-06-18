@@ -527,6 +527,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const enquirySuccessCloseBtn = document.getElementById("enquiry-success-close-btn");
 
     if (enquiryModal) {
+        let modalShownOnScroll = false;
+
         const openEnquiryModal = () => {
             if (enquiryFormContainer) enquiryFormContainer.style.display = "block";
             if (enquiryStep3) enquiryStep3.style.display = "none";
@@ -534,7 +536,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             enquiryModal.classList.add("active");
             document.body.style.overflow = "hidden";
+            modalShownOnScroll = true;
         };
+
+        // Auto-open enquiry form modal when scrolling down the page
+        window.addEventListener("scroll", () => {
+            if (!modalShownOnScroll && window.scrollY > 100) {
+                openEnquiryModal();
+            }
+        });
 
         // Open Modal via Hero Enquire Button
         if (heroEnquireBtn) {
