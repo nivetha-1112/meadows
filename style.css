@@ -548,23 +548,23 @@ section {
 }
 
 @media (min-width: 481px) and (max-width: 991px) {
-    /* ── HERO: Landscape image optimised for tablets ── */
+    /* ── HERO: Portrait image optimised for tablets (same as mobile) ── */
     .hero-section-previous {
-        min-height: 120vh !important;
-        height: 120vh !important;
+        min-height: 168vw !important;
+        height: 168vw !important;
         padding: 0 !important;
-        background-position: 75% bottom !important;
+        background-position: center bottom !important;
         background-size: cover !important;
         align-items: flex-start !important;
         background-image:
             linear-gradient(
                 to bottom,
-                rgba(10, 5, 20, 0.60) 0%,
-                rgba(10, 5, 20, 0.40) 45%,
-                rgba(0, 0, 0, 0.0) 65%,
-                rgba(0, 0, 0, 0.0) 100%
+                rgba(10, 5, 20, 0.52) 0%,
+                rgba(10, 5, 20, 0.35) 35%,
+                rgba(0, 0, 0, 0.0)    50%,
+                rgba(0, 0, 0, 0.0)   100%
             ),
-            url('assets/hero-banner.png') !important;
+            url('assets/mobile%20view.jpeg') !important;
     }
 
     .container {

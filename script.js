@@ -526,16 +526,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const popupLeadForm = document.getElementById("popup-lead-form");
     const enquirySuccessCloseBtn = document.getElementById("enquiry-success-close-btn");
 
-    if (enquiryModal && heroEnquireBtn) {
-        // Open Modal
-        heroEnquireBtn.addEventListener("click", (e) => {
-            e.preventDefault();
+    if (enquiryModal) {
+        const openEnquiryModal = () => {
             if (enquiryFormContainer) enquiryFormContainer.style.display = "block";
             if (enquiryStep3) enquiryStep3.style.display = "none";
             if (popupLeadForm) popupLeadForm.reset();
 
             enquiryModal.classList.add("active");
             document.body.style.overflow = "hidden";
+        };
+
+        // Open Modal via Hero Enquire Button
+        if (heroEnquireBtn) {
+            heroEnquireBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openEnquiryModal();
+            });
+        }
+
+        // Open Modal via Navbar "Contact Us" Buttons
+        const contactUsButtons = document.querySelectorAll(".nav-cta-btn-previous, .nav-btn-mobile");
+        contactUsButtons.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openEnquiryModal();
+            });
         });
 
         const closeEnquiryModal = () => {
