@@ -476,24 +476,24 @@ section {
 
     /* Content sits at top, clears the fixed navbar */
     .hero-content-wrapper {
-        padding-top: 80px !important;
+        padding-top: 140px !important;
         padding-bottom: 0 !important;
         width: 100%;
     }
 
     /* Full-width, centered */
     .hero-left-text {
-        max-width: 100%;
+        max-width: 100% !important;
         padding: 0 !important;
         text-align: center;
     }
 
     /* Title */
     .hero-screenshot-title {
-        font-size: 1.3rem !important;
+        font-size: 1.55rem !important;
         font-weight: 800 !important;
         letter-spacing: -0.3px;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         line-height: 1.25;
         text-align: center;
         color: #ffffff;
@@ -508,12 +508,12 @@ section {
     /* Description box — dark glass card, fully rounded, compact and centered */
     .hero-screenshot-desc {
         font-family: var(--font-body) !important;
-        font-size: 0.74rem !important;
-        line-height: 1.32 !important;
+        font-size: 0.84rem !important;
+        line-height: 1.45 !important;
         color: #f0e8ff !important;
-        max-width: 340px !important;
+        max-width: 380px !important;
         margin: 0 auto !important;
-        padding: 6px 10px !important;
+        padding: 10px 14px !important;
         background-color: rgba(20, 10, 35, 0.58) !important;
         border-left: none !important;
         border-radius: 12px !important;
@@ -525,14 +525,14 @@ section {
 
     /* Enquire Now button — centered */
     .hero-enquire-wrapper {
-        margin-top: 8px !important;
+        margin-top: 12px !important;
         display: flex;
         justify-content: center;
     }
 
     .strip-submit-btn {
-        padding: 8px 24px !important;
-        font-size: 0.88rem !important;
+        padding: 10px 32px !important;
+        font-size: 0.94rem !important;
         border-radius: 8px !important;
         background-color: #653388 !important;
         color: #fff !important;
@@ -577,8 +577,8 @@ section {
     }
 
     /* Content centered with custom top padding */
-    .hero-content-wrapper {
-        padding-top: 100px !important;
+   .hero-content-wrapper {
+        padding-top: 130px !important;
         padding-bottom: 0 !important;
         width: 100%;
     }
