@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    ATH MEADOWS LANDING PAGE - BRAND COMPLIANT STYLING
    Primary Color: #653388 (Royal Purple)
    Secondary Color: #8A5CB0
@@ -557,8 +557,8 @@ section {
 @media (min-width: 481px) and (max-width: 991px) {
     /* ── HERO: Portrait image optimised for tablets (same as mobile) ── */
     .hero-section-previous {
-        min-height: 168vw !important;
-        height: 168vw !important;
+        min-height: 130vw !important;
+        height: 130vw !important;
         padding: 0 !important;
         background-position: center bottom !important;
         background-size: cover !important;
@@ -585,7 +585,7 @@ section {
 
     /* Content centered with custom top padding */
    .hero-content-wrapper {
-        padding-top: clamp(100px, 15vw, 140px) !important;
+        padding-top: clamp(110px, 15vw, 130px) !important;
         padding-bottom: 0 !important;
         width: 100%;
     }
@@ -603,7 +603,7 @@ section {
         font-size: clamp(1.6rem, 4.5vw, 2.2rem) !important;
         font-weight: 800 !important;
         letter-spacing: -0.5px;
-        margin-bottom: clamp(16px, 3.5vw, 32px) !important;
+        margin-bottom: clamp(10px, 2vw, 15px) !important;
         line-height: 1.25;
         text-align: center;
         color: #ffffff;
@@ -622,7 +622,7 @@ section {
         line-height: 1.45 !important;
         color: #f0e8ff !important;
         max-width: 550px !important;
-        margin: 0 auto clamp(16px, 3.5vw, 32px) !important;
+        margin: 0 auto clamp(10px, 2vw, 15px) !important;
         padding: 10px 16px !important;
         background-color: rgba(20, 10, 35, 0.58) !important;
         border-left: none !important;
@@ -1311,7 +1311,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     .amenities-grid-premium {
         grid-template-columns: 1fr;
         gap: 20px;
