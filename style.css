@@ -443,71 +443,213 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+
+    /* ── HERO: Portrait image optimised for mobile ── */
     .hero-section-previous {
-        min-height: auto;
-        padding: 40px 0;
+        min-height: 168vw !important;
+        height: 168vw !important;
+        padding: 0 !important;
+        background-position: center bottom !important;
+        background-size: cover !important;
+        align-items: flex-start !important;
+        /* Use the portrait mobile image + gradient overlay for text legibility */
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(10, 5, 20, 0.52) 0%,
+                rgba(10, 5, 20, 0.35) 35%,
+                rgba(0, 0, 0, 0.0)    50%,
+                rgba(0, 0, 0, 0.0)   100%
+            ),
+            url('assets/mobile%20view.jpeg') !important;
     }
 
+    .container {
+        padding: 0 16px !important;
+    }
+
+    .hero-container {
+        align-items: flex-start !important;
+        height: 100% !important;
+    }
+
+    /* Content sits at top, clears the fixed navbar */
     .hero-content-wrapper {
-        padding-top: 100px;
-        padding-bottom: 30px;
+        padding-top: 80px !important;
+        padding-bottom: 0 !important;
+        width: 100%;
     }
 
+    /* Full-width, centered */
     .hero-left-text {
         max-width: 100%;
-        padding: 0 10px;
+        padding: 0 !important;
+        text-align: center;
     }
 
+    /* Title */
     .hero-screenshot-title {
-        font-size: 1.8rem !important;
-        letter-spacing: -0.5px;
-        margin-bottom: 15px;
-        line-height: 1.2;
+        font-size: 1.3rem !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.3px;
+        margin-bottom: 4px;
+        line-height: 1.25;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
-    .hero-screenshot-desc {
-        font-size: 1rem;
-        max-width: 100%;
+    /* Highlight color */
+    .hero-highlight {
+        color: #d480f0;
     }
 
-    .hero-enquire-wrapper {
-        margin-top: 10px;
-    }
-
+    /* Description box — dark glass card, fully rounded, compact and centered */
     .hero-screenshot-desc {
         font-family: var(--font-body) !important;
-        font-size: 1.05rem !important;
-        line-height: 1.7 !important;
-        color: #ffffff;
-        max-width: 600px;
-        margin: 0;
-        padding: 18px 24px;
-        background-color: rgb(31 20 42 / 56%) !important;
-        border-left: 4px solid #7f0e7f !important;
-        border-radius: 0 12px 12px 0 !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: blur(8px) !important;
-        /* box-shadow: 0 10px 25px rgb(0 0 0 / 0%) !important; */
+        font-size: 0.74rem !important;
+        line-height: 1.32 !important;
+        color: #f0e8ff !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+        padding: 6px 10px !important;
+        background-color: rgba(20, 10, 35, 0.58) !important;
+        border-left: none !important;
+        border-radius: 12px !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+        text-align: center;
     }
 
-    .hero-section-previous {
-        background-position: center !important;
-        background-size: cover !important;
+    /* Enquire Now button — centered */
+    .hero-enquire-wrapper {
+        margin-top: 8px !important;
+        display: flex;
+        justify-content: center;
     }
 
-    .overview-title-previous {
-        font-size: 1.8rem !important;
+    .strip-submit-btn {
+        padding: 8px 24px !important;
+        font-size: 0.88rem !important;
+        border-radius: 8px !important;
+        background-color: #653388 !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.3px;
+        box-shadow: 0 4px 14px rgba(101, 51, 136, 0.45) !important;
     }
 
-    .section-title {
-        font-size: 1.8rem !important;
-    }
-
-    .contact-panel-title {
-        font-size: 1.9rem !important;
-    }
+    /* ── Other section font overrides ── */
+    .overview-title-previous { font-size: 1.8rem !important; }
+    .section-title           { font-size: 1.8rem !important; }
+    .contact-panel-title     { font-size: 1.9rem !important; }
 }
+
+@media (min-width: 481px) and (max-width: 991px) {
+    /* ── HERO: Landscape image optimised for tablets ── */
+    .hero-section-previous {
+        min-height: 120vh !important;
+        height: 120vh !important;
+        padding: 0 !important;
+        background-position: 75% bottom !important;
+        background-size: cover !important;
+        align-items: flex-start !important;
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(10, 5, 20, 0.60) 0%,
+                rgba(10, 5, 20, 0.40) 45%,
+                rgba(0, 0, 0, 0.0) 65%,
+                rgba(0, 0, 0, 0.0) 100%
+            ),
+            url('assets/hero-banner.png') !important;
+    }
+
+    .container {
+        padding: 0 24px !important;
+    }
+
+    .hero-container {
+        align-items: flex-start !important;
+        height: 100% !important;
+    }
+
+    /* Content centered with custom top padding */
+    .hero-content-wrapper {
+        padding-top: 100px !important;
+        padding-bottom: 0 !important;
+        width: 100%;
+    }
+
+    /* Centered text for tablets */
+    .hero-left-text {
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    /* Title size for tablets */
+    .hero-screenshot-title {
+        font-size: 2.2rem !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.5px;
+        margin-bottom: 32px !important;
+        line-height: 1.25;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    /* Highlight color */
+    .hero-highlight {
+        color: #d480f0;
+    }
+
+    /* Description box for tablets with bottom gap */
+    .hero-screenshot-desc {
+        font-family: var(--font-body) !important;
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        color: #f0e8ff !important;
+        max-width: 550px !important;
+        margin: 0 auto 32px !important;
+        padding: 10px 16px !important;
+        background-color: rgba(20, 10, 35, 0.58) !important;
+        border-left: none !important;
+        border-radius: 12px !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+        text-align: center;
+    }
+
+    /* Enquire Now button — centered */
+    .hero-enquire-wrapper {
+        margin-top: 0 !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .strip-submit-btn {
+        padding: 12px 36px !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+        background-color: #653388 !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.3px;
+        box-shadow: 0 4px 14px rgba(101, 51, 136, 0.45) !important;
+    }
+
+    /* ── Other section font overrides for tablets ── */
+    .overview-title-previous { font-size: 1.9rem !important; }
+    .section-title           { font-size: 1.9rem !important; }
+    .contact-panel-title     { font-size: 2rem !important; }
+}
+
 
 .hero-enquire-wrapper {
     margin-top: 14px;
@@ -1221,7 +1363,7 @@ section {
     padding: 30px 40px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto 35px;
     position: relative;
     z-index: 2;
@@ -1324,7 +1466,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     overflow: hidden;
-    max-width: 960px;
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -2846,5 +2988,74 @@ section {
     .back-to-top svg {
         width: 16px;
         height: 16px;
+    }
+}
+
+/* --- ENQUIRY POPUP MODAL - MOBILE RESPONSIVE --- */
+@media (max-width: 600px) {
+    /* Overlay: tighter edge padding so modal has more room */
+    .modal-overlay {
+        padding: 8px;
+        align-items: flex-end;
+    }
+
+    /* Container: override the inline padding:40px */
+    #enquiry-modal .modal-container {
+        padding: 24px 18px 28px !important;
+        border-radius: 16px 16px 0 0;
+        max-height: 92vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Close button */
+    #enquiry-modal .modal-close {
+        top: 14px;
+        right: 14px;
+        font-size: 1.8rem;
+    }
+
+    /* Heading */
+    #enquiry-modal h3 {
+        font-size: 1.15rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Intro text */
+    #enquiry-modal p {
+        font-size: 0.82rem !important;
+        margin-bottom: 14px !important;
+        line-height: 1.5;
+    }
+
+    /* Form gap */
+    #popup-lead-form {
+        gap: 12px !important;
+    }
+
+    /* Input fields */
+    #enquiry-modal .form-input {
+        padding: 10px 13px;
+        font-size: 0.88rem;
+    }
+
+    /* Radio options: column layout so they never overflow */
+    .radio-group-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-top: 8px;
+        align-items: flex-start;
+    }
+
+    .radio-option {
+        font-size: 0.88rem;
+        gap: 10px;
+    }
+
+    /* Submit button */
+    #enquiry-modal .btn-full {
+        padding: 13px 20px;
+        font-size: 0.95rem;
+        margin-top: 4px !important;
     }
 }

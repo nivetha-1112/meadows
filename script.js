@@ -273,13 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         "b1-5th-floor": {
             subtitle: "BLOCK - 1 | 5TH FLOOR PLAN",
-            img: "assets/FloorPlans/firtsfp.png",
-            meta: "Fifth Floor Plan"
+            img: "assets/FloorPlans/floorplan005.png",
+            meta: "5A | 3BHK | 1520 Sq.Ft | North Facing | Private Terrace"
         },
         "b1-2bhk": {
-            subtitle: "BLOCK - 1 | APARTMENT - 1C, 2C, 3C, 4C",
-            img: "assets/FloorPlans/floorplan003.png",
-            meta: "North Facing | 2BHK | 990 Sq.Ft"
+            subtitle: "BLOCK - 1 | APARTMENT - 1H, 2H, 3H, 4H",
+            img: "assets/FloorPlans/floorplan002.png",
+            meta: "East Facing | 2BHK | 1010 Sq.Ft"
         },
         "b1-3bhk": {
             subtitle: "BLOCK - 1 | APARTMENT - 1A, 2A, 3A, 4A",
@@ -287,6 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
             meta: "North Facing | 3BHK | 1520 Sq.Ft"
         }
     };
+
 
     const sidebarTabs = document.querySelectorAll(".floor-sidebar-tab");
     const floorSubtitle = document.getElementById("floor-subtitle");
