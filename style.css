@@ -3000,17 +3000,17 @@ section {
 
 /* --- ENQUIRY POPUP MODAL - MOBILE RESPONSIVE --- */
 @media (max-width: 600px) {
-    /* Overlay: tighter edge padding so modal has more room */
+    /* Overlay: center the modal and give standard edge padding */
     .modal-overlay {
-        padding: 8px;
-        align-items: flex-end;
+        padding: 16px;
+        align-items: center;
     }
 
-    /* Container: override the inline padding:40px */
+    /* Container: override the inline padding:40px and center with rounded corners */
     #enquiry-modal .modal-container {
         padding: 24px 18px 28px !important;
-        border-radius: 16px 16px 0 0;
-        max-height: 92vh;
+        border-radius: 16px !important;
+        max-height: 90vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
