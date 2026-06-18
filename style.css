@@ -825,25 +825,12 @@ section {
     align-items: center;
     width: 100%;
     padding: 0 15px 15px 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
-.splash-bg {
-    display: block;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: -15px;
-    bottom: -15px;
-    border: 2px solid #7f0e7f;
-    border-radius: var(--border-radius-md);
-    z-index: 1;
-    transition: var(--transition-smooth);
-}
 
-.overview-splash-wrapper:hover .splash-bg {
-    transform: translate(-5px, -5px);
-}
+
+
 
 .splash-image-card {
     position: relative;
@@ -870,6 +857,58 @@ section {
 
 .flower-deco-wrapper {
     display: none;
+}
+
+/* ── YouTube Card Corner Bracket Decoration ──────────────────── */
+.yt-corner-frame {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Shared corner span */
+.yt-corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Top-Left corner */
+.yt-corner-tl {
+    top: -8px;
+    left: -8px;
+    border-top: 4px solid #653388;
+    border-left: 4px solid #653388;
+    border-radius: 3px 0 0 0;
+}
+
+/* Top-Right corner */
+.yt-corner-tr {
+    top: -8px;
+    right: -8px;
+    border-top: 4px solid #653388;
+    border-right: 4px solid #653388;
+    border-radius: 0 3px 0 0;
+}
+
+/* Bottom-Left corner */
+.yt-corner-bl {
+    bottom: -8px;
+    left: -8px;
+    border-bottom: 4px solid #653388;
+    border-left: 4px solid #653388;
+    border-radius: 0 0 0 3px;
+}
+
+/* Bottom-Right corner */
+.yt-corner-br {
+    bottom: -8px;
+    right: -8px;
+    border-bottom: 4px solid #653388;
+    border-right: 4px solid #653388;
+    border-radius: 0 0 3px 0;
 }
 
 /* --- PROJECT HIGHLIGHTS (Premium Card Grid) --- */
@@ -1033,12 +1072,10 @@ section {
         width: 100%;
     }
     .overview-splash-wrapper {
-        padding: 0;
-        overflow: hidden;
+        padding: 12px;
+        overflow: visible;
     }
-    .splash-bg {
-        right: 0;
-    }
+ 
 }
 
 .highlights-slider-dots {
